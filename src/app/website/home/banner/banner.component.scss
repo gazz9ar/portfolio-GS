@@ -1,8 +1,8 @@
 .triangle {
     width: 650px;
     height: 650px;
-    border-top: 180px solid rgba(226, 226, 226, 0.2039215686);
-    border-right: 180px solid rgba(226, 226, 226, 0.2039215686);
+    border-top: 180px solid rgba(226, 226, 226, 0.03039215686);
+    border-right: 180px solid rgba(226, 226, 226, 0.03039215686);
     transform: rotate(45deg);
     position: absolute;
     left: 25%;
@@ -12,8 +12,8 @@
 .sub-triangle {
     width: 650px;
     height: 650px;
-    border-top: 13px solid rgba(226, 226, 226, 0.2039215686);
-    border-right: 13px solid rgba(226, 226, 226, 0.2039215686);
+    border-top: 13px solid rgba(226, 226, 226, 0.03039215686);
+    border-right: 13px solid rgba(226, 226, 226, 0.03039215686);
     transform: rotate(45deg);
     position: absolute;
     left: 28%;
@@ -21,9 +21,14 @@
     z-index: 0;
 }
 .avatar {   
-    padding-top: 20%;
+    padding-top: 14%;
+    border-radius: 50%;
     img {
         width: 250px;
+        z-index: 2;
+        border-radius: 50%;
+    }
+    .avatar-wrapper {
         z-index: 2;
     }
 }
@@ -36,7 +41,8 @@
     height: 379px;  
     position: absolute;        
     top: 311px;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(174,137,249,1) 35%, rgba(255,50,254,1) 100%);
+    background: rgb(216,27,96);
+    background: linear-gradient(302deg, rgba(216,27,96,1) 0%, rgba(174,137,249,1) 55%, rgba(142,36,170,1) 100%);
     div {
         margin-top: 6px;
         margin-left: 9px;
@@ -49,9 +55,10 @@
 
 .empty-box-left {      
     left: 0;
+    transform: rotate(180deg);
     div {
-        margin-right: 9px;
-        margin-left: 0;
+        margin-right: 0px;
+        margin-left: 9px;
     }
 
 }
