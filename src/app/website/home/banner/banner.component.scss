@@ -1,0 +1,72 @@
+.triangle {
+    width: 650px;
+    height: 650px;
+    border-top: 180px solid rgba(226, 226, 226, 0.2039215686);
+    border-right: 180px solid rgba(226, 226, 226, 0.2039215686);
+    transform: rotate(45deg);
+    position: absolute;
+    left: 25%;
+    top: 19%;
+    z-index: 0;
+}
+.sub-triangle {
+    width: 650px;
+    height: 650px;
+    border-top: 13px solid rgba(226, 226, 226, 0.2039215686);
+    border-right: 13px solid rgba(226, 226, 226, 0.2039215686);
+    transform: rotate(45deg);
+    position: absolute;
+    left: 28%;
+    top: 19%;
+    z-index: 0;
+}
+.avatar {   
+    padding-top: 20%;
+    img {
+        width: 250px;
+        z-index: 2;
+    }
+}
+.banner {
+    height: 94vh !important;   
+}
+.empty-box-left,
+.empty-box-right {
+    width: 298px;
+    height: 379px;  
+    position: absolute;        
+    top: 311px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(174,137,249,1) 35%, rgba(255,50,254,1) 100%);
+    div {
+        margin-top: 6px;
+        margin-left: 9px;
+        width: 97%;
+        height: 97%;
+        padding: 5px;
+    }
+   
+}
+
+.empty-box-left {      
+    left: 0;
+    div {
+        margin-right: 9px;
+        margin-left: 0;
+    }
+
+}
+.empty-box-right {    
+    right: 0;
+    h3 {
+        letter-spacing: 4px;
+        font-size: 2.6rem;
+        /* padding: 10px; */
+        padding-left: 20px;
+        padding-top: 150px;
+    }
+    strong {
+        padding-left: 20px;
+        font-size: 1.6rem;
+        margin-top: 15px;
+    }
+}

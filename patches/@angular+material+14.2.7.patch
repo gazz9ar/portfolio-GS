@@ -1,0 +1,143 @@
+diff --git a/node_modules/@angular/material/core/theming/_palette.scss b/node_modules/@angular/material/core/theming/_palette.scss
+index e2b5faa..fda75b8 100644
+--- a/node_modules/@angular/material/core/theming/_palette.scss
++++ b/node_modules/@angular/material/core/theming/_palette.scss
+@@ -202,6 +202,138 @@ $indigo-palette: (
+   )
+ );
+ 
++$light-primary-palette: (
++  50: #FAFAFA,
++  100: #F5F5F5,
++  200: #EEEEEE,
++  300: #E0E0E0,
++  400: #BDBDBD,
++  500: #9E9E9E,
++  600: #757575,
++  700: #616161,
++  800: #424242,
++  900: #212121,
++  A100: #F5F5F5,
++  A200: #EEEEEE,
++  A400: #616161,
++  A700: #212121,
++  contrast: (
++    50: $dark-primary-text,
++    100: $dark-primary-text,
++    200: $dark-primary-text,
++    300: $light-primary-text,
++    400: $light-primary-text,
++    500: $light-primary-text,
++    600: $light-primary-text,
++    700: $light-primary-text,
++    800: $light-primary-text,
++    900: $light-primary-text,
++    A100: $dark-primary-text,
++    A200: $light-primary-text,
++    A400: $light-primary-text,
++    A700: $light-primary-text,
++  )
++);
++
++$light-accent-palette: (
++  50: #EDE7F6,
++  100: #D1C4E9,
++  200: #B39DDB,
++  300: #9575CD,
++  400: #7E57C2,
++  500: #673AB7,
++  600: #5E35B1,
++  700: #512DA8,
++  800: #4527A0,
++  900: #311B92,
++  A100: #B388FF,
++  A200: #7C4DFF,
++  A400: #651FFF,
++  A700: #6200EA,
++  contrast: (
++    50: $dark-primary-text,
++    100: $dark-primary-text,
++    200: $dark-primary-text,
++    300: $light-primary-text,
++    400: $light-primary-text,
++    500: $light-primary-text,
++    600: $light-primary-text,
++    700: $light-primary-text,
++    800: $light-primary-text,
++    900: $light-primary-text,
++    A100: $dark-primary-text,
++    A200: $light-primary-text,
++    A400: $light-primary-text,
++    A700: $light-primary-text,
++  )
++);
++
++$dark-primary-palette: (
++  50: #EDE7F6,
++  100: #D1C4E9,
++  200: #B39DDB,
++  300: #9575CD,
++  400: #7E57C2,
++  500: #673AB7,
++  600: #5E35B1,
++  700: #512DA8,
++  800: #4527A0,
++  900: #311B92,
++  A100: #B388FF,
++  A200: #7C4DFF,
++  A400: #651FFF,
++  A700: #6200EA,
++  contrast: (
++    50: $dark-primary-text,
++    100: $dark-primary-text,
++    200: $dark-primary-text,
++    300: $light-primary-text,
++    400: $light-primary-text,
++    500: $light-primary-text,
++    600: $light-primary-text,
++    700: $light-primary-text,
++    800: $light-primary-text,
++    900: $light-primary-text,
++    A100: $dark-primary-text,
++    A200: $light-primary-text,
++    A400: $light-primary-text,
++    A700: $light-primary-text,
++  )
++);
++
++$dark-accent-palette: (
++  50: #e8eaf6,
++  100: #c5cae9,
++  200: #9fa8da,
++  300: #7986cb,
++  400: #5c6bc0,
++  500: #3f51b5,
++  600: #3949ab,
++  700: #303f9f,
++  800: #283593,
++  900: #1a237e,
++  A100: #8c9eff,
++  A200: #536dfe,
++  A400: #3d5afe,
++  A700: #304ffe,
++  contrast: (
++    50: $dark-primary-text,
++    100: $dark-primary-text,
++    200: $dark-primary-text,
++    300: $light-primary-text,
++    400: $light-primary-text,
++    500: $light-primary-text,
++    600: $light-primary-text,
++    700: $light-primary-text,
++    800: $light-primary-text,
++    900: $light-primary-text,
++    A100: $dark-primary-text,
++    A200: $light-primary-text,
++    A400: $light-primary-text,
++    A700: $light-primary-text,
++  )
++);
++
+ $blue-palette: (
+   50: #e3f2fd,
+   100: #bbdefb,
