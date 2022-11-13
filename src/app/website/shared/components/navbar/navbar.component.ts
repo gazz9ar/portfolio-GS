@@ -10,9 +10,12 @@ import { DarkModeService } from '../../services/dark-mode.service';
 export class NavbarComponent implements OnInit {
 
   toggleControl = new FormControl(false);
+
   constructor(
     private darkModeService:DarkModeService
-  ) { }
+  ) { 
+
+  }
 
   ngOnInit(): void {
     this.checkForDarkModeChange();
