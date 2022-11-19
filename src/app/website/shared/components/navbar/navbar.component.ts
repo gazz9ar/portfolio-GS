@@ -10,6 +10,7 @@ import { DarkModeService } from '../../services/dark-mode.service';
 export class NavbarComponent implements OnInit {
 
   toggleControl = new FormControl(false);
+  darkModeActivated:boolean = false;
 
   constructor(
     private darkModeService:DarkModeService
@@ -22,7 +23,15 @@ export class NavbarComponent implements OnInit {
   }
 
   checkForDarkModeChange(): void {
-    this.toggleControl.valueChanges.subscribe((darkMode) => (darkMode ? this.darkModeService.changeToDarkMode() : this.darkModeService.changeToLightMode()))
+    this.toggleControl.valueChanges.subscribe((darkMode) => {
+      if (darkMode) {
+        this.darkModeActivated = true;
+        this.darkModeService.changeToDarkMode()
+      } else {
+        this.darkModeActivated = false;
+        this.darkModeService.changeToLightMode()
+      }     
+    })
   }
 
 }

@@ -1,5 +1,26 @@
 
 <div class="w-100 banner mat-app-background">
+
+    <img 
+    *ngFor="let skill of skills$ | async as skills"
+    [src]="skill.url" 
+    [alt]="skill.name"
+    class="position-absolute floating-icon"
+  
+    [@floatingIcon]="{value:scrolled ? 'end' : 'start', params:{left:skill.left}}" >
+
+    <!-- <img 
+    src="assets/js.webp" 
+    alt="Javascript" 
+    class="position-absolute floating-icon" 
+    [@floatingIcon]="scrolled ? 'end' : 'start'">
+
+    <img 
+    src="assets/angular.webp" 
+    alt="Javascript" 
+    class="position-absolute floating-icon" 
+    [@floatingIcon]="scrolled ? 'end' : 'start'"> -->
+
     <div class="triangle"></div>
     <div class="sub-triangle"></div>
     <div class="avatar w-100 d-flex justify-content-center ">
@@ -18,7 +39,7 @@
                 <fa-icon [icon]="faWhatsapp" class="social-media-icon"></fa-icon>
                 <fa-icon [icon]="faEnvelope" class="social-media-icon"></fa-icon>
             </div>           
-            <img src="assets/avatarz.PNG" alt="Avatar Gaspar Santillan" class="shadow">
+            <img src="assets/avatarz.webp" alt="Avatar Gaspar Santillan" class="shadow">
         </div>
     
 
@@ -28,6 +49,8 @@
                 <strong>Developer</strong>
             </div>
         </div>
+
+        <div class="violet-light mat-app-background" [ngClass]="{'d-none':darkmode | async}"></div>
 
     </div>
     

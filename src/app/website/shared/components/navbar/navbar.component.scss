@@ -1,7 +1,10 @@
 .darkmode-btn {
     height: auto !important;
     margin-bottom: -3px;
+    
 }
 .navbar {
-    z-index: 2;
+    z-index: 20;
+    background: rgb(64,59,72);
+    background: linear-gradient(180deg, rgba(64,59,72,1) 0%, rgba(48,48,48,1) 100%);
 }
