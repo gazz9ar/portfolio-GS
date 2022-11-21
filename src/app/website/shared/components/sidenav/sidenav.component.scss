@@ -1,0 +1,62 @@
+.drawer {
+    height: 100%;  
+    max-width: 300px;
+    width: auto;
+    position: fixed;
+    z-index: 2;
+    .drawer-menu {
+        background-color: #121326;
+    }
+}
+.avatar {
+  
+    width: 100px;
+    z-index: 2;
+    border-radius: 50%;
+    
+}
+.me {
+    font-size: 1.3rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 12px;
+    margin-top: 50px;
+}
+ul {
+    list-style: none;
+    padding: 0px;
+}
+.menu-list {
+    .menu-item {        
+        width: 184px;
+        margin: 5px 27px;
+        margin-bottom: 10px;     
+    }
+    .menu-item-dark {
+        letter-spacing: 1px;
+        color: #fff;
+    }
+}
+// ::ng:deep .d
+#drawer-button {
+   
+    position: relative;
+    left: -16px;
+    .icon {
+        padding-left: 3px;
+    }
+}
+.drawer-btn {
+    position: relative;
+    top: 47%;
+    left: -35%;
+    .icon {
+        padding-left: 3px;
+    }
+}
+.drawer-container {
+    position: relative;
+}
+.bg-white {
+    background-color: #fff;
+}

@@ -20,9 +20,13 @@ interface Skill {
 
       state('end', style({       
         left: '{{left}}',
-        bottom: '25%',
+        bottom: '{{bottom}}',
       }),
-      {params: {left: '30%'}}),
+      {params: 
+        //default values
+        {left: '30%',
+        bottom: '25%'},       
+      }),
 
       state('start', style({
         left:'{{left}}',
@@ -31,10 +35,10 @@ interface Skill {
       {params: {left: '30%'}}),
 
       transition('end => start',[
-        animate('2s')
+        animate('2s ease-in')
       ]),
       transition('start => end',[
-        animate('2s')
+        animate('2s ease-out')
       ])
     ])
   ]

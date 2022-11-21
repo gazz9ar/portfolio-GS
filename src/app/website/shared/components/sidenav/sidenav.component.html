@@ -1,0 +1,28 @@
+
+
+<mat-drawer-container class="drawer mat-app-background" autosize>
+    <mat-drawer #drawer class="drawer-menu" mode="side" [ngClass]="{'text-white': (darkmode | async) == false, 'bg-white': (darkmode | async) == true}">
+        <div class="me">Gaspar Santillan</div>
+        <div class="w-100 d-flex justify-content-center">
+            <img src="assets/avatarz.webp" alt="Avatar Gaspar Santillan" class="shadow avatar mb-5">
+        </div>
+       
+        <ul class="menu-list">
+         <li><button mat-stroked-button class="menu-item" color="primary" [ngClass]="{'menu-item-dark': (darkmode | async) == false}">Inicio</button></li>
+         <li><button mat-stroked-button class="menu-item" color="primary" [ngClass]="{'menu-item-dark': (darkmode | async) == false}">Skills</button></li>
+         <li><button mat-stroked-button class="menu-item" color="primary" [ngClass]="{'menu-item-dark': (darkmode | async) == false}">Projects</button></li>
+        </ul>
+    </mat-drawer>
+    
+    <div class="drawer-content d-flex justify-content-center align-items-center h-100">    
+        <button (click)="expand()" id="drawer-button" mat-mini-fab aria-label="Example icon button with a home icon">
+            <mat-icon class="icon" *ngIf="isExpanded">arrow_left_alt</mat-icon>
+            <mat-icon class="icon" *ngIf="!isExpanded">arrow_right_alt</mat-icon>
+        </button>    
+    </div>
+    
+    
+</mat-drawer-container>
+
+
+

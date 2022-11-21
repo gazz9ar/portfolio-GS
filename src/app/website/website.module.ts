@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { CoreModule } from '../core/core.module';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { BannerComponent } from './home/banner/banner.component';
-import { ScrollAnimationDirective } from './home/banner/skills-animation/scroll-animation.directive';
+import { SidenavComponent } from './shared/components/sidenav/sidenav.component';
 
 
 @NgModule({
@@ -16,7 +16,7 @@ import { ScrollAnimationDirective } from './home/banner/skills-animation/scroll-
     HomeComponent,
     NavbarComponent,
     BannerComponent,
-    ScrollAnimationDirective
+    SidenavComponent
   ],
   imports: [
     CommonModule,
