@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 interface Skill {
   name:string;
@@ -87,7 +87,22 @@ export class BannerService {
     }
   ];
 
-  public skillsIcons:Observable<Skill[]> = of(this.skills)
+  private scrolledSubject:BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public scrolledOb$:Observable<boolean> = this.scrolledSubject.asObservable();
+
+  public skillsIcons:Observable<Skill[]> = of(this.skills);
   
   constructor() { }
+
+
+  changeToScrolled(): void {
+    this.scrolledSubject.next(true);
+    setTimeout(() => {
+      this.scrolledSubject.next(false);
+    }, 1000);
+  }
+
+  changeToNotScrolled(): void {
+    this.scrolledSubject.next(false);
+  }
 }

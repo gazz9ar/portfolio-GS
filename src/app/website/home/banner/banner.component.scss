@@ -40,22 +40,26 @@
     }
 }
 .banner {
-    height: 94vh !important;   
+    height: 100% !important;   
 }
-.empty-box-left,
 .empty-box-right {
     width: 298px;
     height: 379px;  
     position: absolute;        
     top: 311px;
     background: rgb(216,27,96);
-    background: linear-gradient(302deg, rgba(216,27,96,1) 0%, rgba(174,137,249,1) 55%, rgba(142,36,170,1) 100%);
+    background: linear-gradient(302deg, rgba(216,27,96,1) 0%, rgba(174,137,249,1) 55%, rgba(142,36,170,1) 100%);   
+    &:hover {
+        opacity: 0.8;
+    }
     div {
         margin-top: 6px;
         margin-left: 9px;
         width: 97%;
         height: 97%;
         padding: 5px;
+        box-shadow: 2px 0px 38px #cd44e5;
+        
     }
    
 }
