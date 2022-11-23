@@ -33,8 +33,7 @@ export class ProjectsComponent extends Unsub implements OnInit, AfterViewInit {
     .subscribe(
       resp => {
         if (resp) {         
-          console.log('should scroll');
-                 
+          console.log('should scroll');                 
           this.projectsElement?.nativeElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});          
         }
       }

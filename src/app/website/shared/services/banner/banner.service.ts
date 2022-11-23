@@ -96,10 +96,13 @@ export class BannerService {
 
 
   changeToScrolled(): void {
-    this.scrolledSubject.next(true);
+    setTimeout(() => {
+      this.scrolledSubject.next(true);
+    }, 500);
+    
     setTimeout(() => {
       this.scrolledSubject.next(false);
-    }, 1000);
+    }, 1500);
   }
 
   changeToNotScrolled(): void {
