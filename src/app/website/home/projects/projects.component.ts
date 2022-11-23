@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { disableBodyScroll } from 'body-scroll-lock';
 import { take, takeUntil } from 'rxjs';
 import { Unsub } from 'src/app/core/utils/Unsubscription';
 import { BannerService } from '../../shared/services/banner/banner.service';
@@ -18,7 +19,7 @@ export class ProjectsComponent extends Unsub implements OnInit, AfterViewInit {
   }
   
   ngOnInit(): void {
-    this.bannerService.changeToNotScrolled();
+    
   }
   
   ngAfterViewInit(): void {
@@ -26,14 +27,14 @@ export class ProjectsComponent extends Unsub implements OnInit, AfterViewInit {
   }
 
   checkForScroll(): void {
-    this.bannerService.scrolledOb$
+    this.bannerService.scrolledSectionOb$
     .pipe(
       takeUntil(this.unsubscribe$)
     )
     .subscribe(
-      resp => {
-        if (resp) {         
-          console.log('should scroll');                 
+      (section:number) => {
+        if (section === 1) {       
+          disableBodyScroll(this.projectsElement?.nativeElement)                      
           this.projectsElement?.nativeElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});          
         }
       }
