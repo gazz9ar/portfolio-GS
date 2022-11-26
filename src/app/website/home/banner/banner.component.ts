@@ -58,11 +58,7 @@ export class BannerComponent extends Unsub implements OnInit {
   faEnvelope = faEnvelope;
   scrolled:boolean = false;
   darkmode?:Observable<boolean>;
-  skills$?:Observable<Skill[]>;
-  lastPagePosition:number = 0;
-  userScrolledInterval:boolean = false;
-  currentSection:number = 0;
-  autoScrolled:boolean = false;
+  skills$?:Observable<Skill[]>; 
 
   @ViewChild("banner") banner?: ElementRef; 
  
@@ -79,84 +75,19 @@ export class BannerComponent extends Unsub implements OnInit {
     this.scrolled = true;    
     setTimeout(() => {
       this.scrolled = false;
-    }, 500);   
-    this.checkForScroll();        
+    }, 500);             
   } 
 
 
-  @HostListener('window:scroll', ['$event']) userScrolled(event:any) {       
-    console.log('DETECTED SCROLL'); 
-    this.setScrolling(event);        
+  @HostListener('window:scroll') userScrolled() { 
+    this.setScrollForIconAnimation();        
   }
-
-  setScrolling(event:any):void {    
-    disableBodyScroll(this.banner?.nativeElement);     
-    this.detectScrollDownOrUp(event); 
-    this.setScrollForIconAnimation();   
-  }
-
-  detectScrollDownOrUp(event:any): void {      
-    const currentPosition:number = event.target.children[0].scrollTop;    
-    if (currentPosition > this.lastPagePosition && !this.userScrolledInterval) {     
-      this.onDownScroll();
-    } else if(currentPosition < this.lastPagePosition && !this.userScrolledInterval) {
-      this.onUpScroll();
-    }
-    this.lastPagePosition = currentPosition;
-  }  
 
   setScrollForIconAnimation(): void {
     this.scrolled = true;    
     setTimeout(() => {
       this.scrolled = false;
     }, 500);
-  }
-
-  onDownScroll(): void { 
-    this.currentSection++;
-    this.bannerService.changeSection(this.currentSection);          
-    setTimeout(() => {
-      enableBodyScroll(this.banner?.nativeElement);
-    }, 3500);
-  }
-
-  onUpScroll(): void {      
-    if (this.currentSection > 0) {
-      this.currentSection--; 
-    }     
-    this.bannerService.changeSection(this.currentSection);          
-    setTimeout(() => {
-      enableBodyScroll(this.banner?.nativeElement);
-    }, 3500);
-  }
-
-  checkForScroll(): void {
-    this.bannerService
-    .scrolledIntervalOb$
-    .pipe(
-      takeUntil(this.unsubscribe$)
-    )
-    .subscribe(
-      resp => {            
-        resp ? this.userScrolledInterval = true : this.userScrolledInterval = false;         
-      }
-    );
-
-    this.bannerService
-    .scrolledSectionOb$
-    .pipe(
-      takeUntil(this.unsubscribe$)
-    )
-    .subscribe(
-      (section:number) => {          
-        this.currentSection = section;
-        if(section === 0) {         
-          this.banner?.nativeElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});                      
-        }
-      }
-    );  
-
-   
   }
 
 }
