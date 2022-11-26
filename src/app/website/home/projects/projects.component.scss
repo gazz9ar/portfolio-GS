@@ -1,3 +1,34 @@
 .projects-wrapper {
-    padding-top: 80px;
+    padding-top: 80px;   
+    .project {
+        position: relative;
+        strong {
+            letter-spacing: 1px;
+        }
+        
+    }
+   
+}
+.appname {
+    padding-top: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+.apptype {
+    width: 25%;
+    border-radius: 50px;
+    background-color: #424242;
+    top: 124px;
+    left: 37%;
+    padding: 6px;
+}
+.project-description {
+    padding-top: 30px;
+}
+.project-wrapper {
+    cursor: pointer;
+    &:hover{
+        box-shadow: 2px 5px 5px #cd44e5 !important;
+    }
 }

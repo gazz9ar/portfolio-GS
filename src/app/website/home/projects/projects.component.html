@@ -2,8 +2,23 @@
     <div class="container">
         <div class="row">
             <div class="col-12 pt-5">
-                <p class="fs-2 text-center">About Me</p>                
+                <p class="fs-2 text-center">Personal Projects</p>
             </div>
         </div>
-    </div>    
+        <div class="row mt-4 d-flex justify-content-center">
+            <div class="col-3" *ngFor="let project of projects$ | async as projects">
+                <mat-card class="project-wrapper mat-app-background W-100">
+                    <mat-card-content class="project" (click)="navigateTo(project.websiteUrl)">
+                        <img [src]="project.imgUrl" [alt]="project.name" class="w-100">
+                        <div class="position-absolute apptype" [ngClass]="{'bg-white': (darkmode | async),'text-dark':(darkmode | async)}">{{project.type}}</div>
+                        <p class="appname">{{project.name}}</p>
+                        <p>
+                            {{project.description}}                      
+                        </p>
+                        <strong>Stack: {{project.stack}}</strong>
+                    </mat-card-content>
+                </mat-card>
+            </div>           
+        </div>
+    </div>
 </div>

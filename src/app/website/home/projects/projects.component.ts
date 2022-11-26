@@ -1,8 +1,12 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { disableBodyScroll } from 'body-scroll-lock';
-import { take, takeUntil } from 'rxjs';
+import { Observable, take, takeUntil } from 'rxjs';
 import { Unsub } from 'src/app/core/utils/Unsubscription';
 import { BannerService } from '../../shared/services/banner/banner.service';
+import { DarkModeService } from '../../shared/services/dark-mode.service';
+import { ProjectsService } from '../../shared/services/projects/projects.service';
+import { Project } from '../../shared/models/Project'
 
 @Component({
   selector: 'app-projects',
@@ -12,32 +16,30 @@ import { BannerService } from '../../shared/services/banner/banner.service';
 export class ProjectsComponent extends Unsub implements OnInit, AfterViewInit {
 
   @ViewChild('projectsElement') projectsElement?:ElementRef;
+  darkmode?:Observable<boolean>;
+  projects$?:Observable<Project[]>;
+
   constructor(
-    private bannerService:BannerService
+    private bannerService:BannerService,
+    private darkModeService:DarkModeService,
+    private projectsService:ProjectsService,
+    private router:Router
   ) {
     super();
+    this.darkmode = darkModeService.darkModeOb;
   }
   
   ngOnInit(): void {
-    
+    this.projects$ = this.projectsService.projects;
   }
   
   ngAfterViewInit(): void {
-    this.checkForScroll();
+ 
   }
 
-  checkForScroll(): void {
-    this.bannerService.scrolledSectionOb$
-    .pipe(
-      takeUntil(this.unsubscribe$)
-    )
-    .subscribe(
-      (section:number) => {
-        if (section === 1) {       
-          disableBodyScroll(this.projectsElement?.nativeElement)                      
-          this.projectsElement?.nativeElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});          
-        }
-      }
-    )
+  navigateTo(website:string): void {   
+  
+    window.open(website);
   }
+
 }
