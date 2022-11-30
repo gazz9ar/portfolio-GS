@@ -9,6 +9,7 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { BannerComponent } from './home/banner/banner.component';
 import { SidenavComponent } from './shared/components/sidenav/sidenav.component';
 import { ProjectsComponent } from './home/projects/projects.component';
+import { SkillsComponent } from './home/skills/skills.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ProjectsComponent } from './home/projects/projects.component';
     NavbarComponent,
     BannerComponent,
     SidenavComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    SkillsComponent
   ],
   imports: [
     CommonModule,
