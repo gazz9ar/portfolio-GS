@@ -117,7 +117,7 @@ export class BannerService {
     },
     {
       year:'2019',
-      company:'BIT',
+      company:'BIT Solutions',
       role:'Business analyst'
     } 
   ];

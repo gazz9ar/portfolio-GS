@@ -1,1 +1,49 @@
-<p>footer works!</p>
+<div class="w-100 vh-100 mat-app-background pt-5">
+    <div class="container pt-5">
+        <div class="row pt-5">
+            <div class="col-12">
+                <h4 class="fs-2 text-center">Let's talk!</h4>                
+            </div>
+        </div>
+        <div class="row pt-5 mb-5 pb-5">
+            <div class="col-12 col-md-6 d-flex justify-content-center">
+                <div class="d-flex email-wrapper">
+                    <img src="assets/message.png" alt="Email" class="me-4">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <span class="email" [ngClass]="{'text-dark':(darkMode$ | async)}">gazz9ar@gmail.com</span>
+                    </div>                    
+                </div>
+            </div>
+            <div class="col-12 col-md-6 d-flex justify-content-center">
+                <div class="d-flex email-wrapper">
+                    <img src="assets/smartphone.png" alt="Phone" class="me-4">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <span class="email" [ngClass]="{'text-dark':(darkMode$ | async)}">+54 (353) 4258397</span>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-12">                
+                <form class="d-flex flex-column align-items-center justify-content-center" >
+                    <mat-form-field class="contact-input">
+                      <mat-label>Your Name</mat-label>
+                      <input matInput placeholder="Write your name..." type="text">
+                    </mat-form-field>
+
+                    <mat-form-field class="contact-input">
+                        <mat-label>Your Email</mat-label>
+                        <input matInput placeholder="Write your email..." type="email">
+                    </mat-form-field>
+                  
+                    <mat-form-field class="contact-input">
+                      <mat-label>Your Message</mat-label>
+                      <textarea matInput placeholder="Write your message..."></textarea>
+                    </mat-form-field>
+
+                    <button mat-raised-button color="primary" id="sendMessage" type="submit">Send Message</button>
+                  </form>
+            </div>
+        </div>
+    </div>
+</div>
