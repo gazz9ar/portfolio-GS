@@ -1,3 +1,30 @@
-<div class="w-100 vh-100 mat-app-background">
-
+<div class="w-100 vh-100 mat-app-background pt-5">
+    <div class="container">
+        <div class="row pt-5 mb-5">
+            <div class="col-12">
+                <h4 class="pt-5 fs-2 text-center">Skills & Experiences</h4>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-6 d-flex justify-content-center skills-col">
+                <div class="skill-circle" *ngFor="let skill of skills$ | async as skills"
+                 [ngStyle]="{'background-color':skill.backgroundColor}">
+                    <img [src]="skill.url" [alt]="skill.name" [title]="skill.name" 
+                    [style.padding-top.px]="skill.padding ? 1 : 0"
+                    >
+                </div>
+            </div> 
+            <div class="col-6 d-flex  flex-column">
+                <div class="d-flex justify-content-start align-items-center mb-5" *ngFor="let experience of experiences$ | async experiences">
+                    <span class="fs-5 fw-bold me-5 pb-4 role">{{experience.year}}</span>
+                    <div class="d-flex flex-column justify-content-start">
+                        <p class="fs-5 role">{{experience.role}}</p>
+                        <p [ngClass]="{'company-color': (darkMode$ | async)}">{{experience.company}}</p>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+   
 </div>
