@@ -25,23 +25,27 @@
         </div>
         <div class="row mt-5">
             <div class="col-12">                
-                <form class="d-flex flex-column align-items-center justify-content-center" >
+                <form class="d-flex flex-column align-items-center justify-content-center" [formGroup]="footerForm" (ngSubmit)="onSubmit()">
                     <mat-form-field class="contact-input">
                       <mat-label>Your Name</mat-label>
-                      <input matInput placeholder="Write your name..." type="text">
+                      <input matInput placeholder="Write your name..." type="text" formControlName="name">
                     </mat-form-field>
 
                     <mat-form-field class="contact-input">
                         <mat-label>Your Email</mat-label>
-                        <input matInput placeholder="Write your email..." type="email">
+                        <input matInput placeholder="Write your email..." type="email" formControlName="email">
                     </mat-form-field>
                   
                     <mat-form-field class="contact-input">
                       <mat-label>Your Message</mat-label>
-                      <textarea matInput placeholder="Write your message..."></textarea>
+                      <textarea matInput placeholder="Write your message..." formControlName="message"></textarea>
                     </mat-form-field>
 
-                    <button mat-raised-button color="primary" id="sendMessage" type="submit">Send Message</button>
+                    <button mat-raised-button 
+                    color="primary"
+                    id="sendMessage" 
+                    type="submit"
+                    [disabled]="!footerForm.valid">Send Message</button>
                   </form>
             </div>
         </div>
