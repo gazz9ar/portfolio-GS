@@ -1,13 +1,20 @@
 .projects-wrapper {
     padding-top: 80px;   
+    @media (max-width:992px) {
+        height: auto !important;
+    }
     .project {
         position: relative;
         strong {
             letter-spacing: 1px;
-        }
-        
-    }
+        }        
+    }   
    
+}
+.project-col {
+    @media (max-width:992px) {
+        margin-bottom: 50px;
+    }
 }
 .appname {
     padding-top: 20px;
@@ -16,12 +23,16 @@
     font-size: 1.1rem;
 }
 .apptype {
-    width: 25%;
+    width: 20%;
     border-radius: 50px;
     background-color: #424242;
-    top: 124px;
-    left: 37%;
+    top: 287px;
+    left: 40%;
     padding: 6px;
+    text-align: center;
+    @media (max-width:650px) {   
+        display: none;
+    }
 }
 .project-description {
     padding-top: 30px;
@@ -32,3 +43,11 @@
         box-shadow: 2px 5px 5px #cd44e5 !important;
     }
 }
+.project-img {
+    height: 300px;
+    @media (max-width:650px) {
+        height: auto;   
+    }
+}
+
+

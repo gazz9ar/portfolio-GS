@@ -1,6 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
-import { faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { Observable, takeUntil } from 'rxjs';
 import { Unsub } from 'src/app/core/utils/Unsubscription';
@@ -11,6 +11,7 @@ import {
   enableBodyScroll,
   clearAllBodyScrollLocks
 } from "body-scroll-lock";
+import { Router } from '@angular/router';
 
 interface Skill {
   name:string;
@@ -55,7 +56,7 @@ export class BannerComponent extends Unsub implements OnInit {
 
   faLinkedin = faLinkedin;
   faWhatsapp = faWhatsapp;
-  faEnvelope = faEnvelope;
+  faGithub = faGithub;
   scrolled:boolean = false;
   darkmode?:Observable<boolean>;
   skills$?:Observable<Skill[]>; 
@@ -64,7 +65,8 @@ export class BannerComponent extends Unsub implements OnInit {
  
   constructor(
     private darkmodeService:DarkModeService,
-    private bannerService:BannerService
+    private bannerService:BannerService,
+    private router:Router
   ) {
     super();
     this.darkmode = darkmodeService.darkModeOb;
@@ -88,6 +90,18 @@ export class BannerComponent extends Unsub implements OnInit {
     setTimeout(() => {
       this.scrolled = false;
     }, 500);
+  }
+
+  navigateToLinkedIn() {    
+    window.open('https://www.linkedin.com/in/gasparsantillan/', '_blank');
+  }
+
+  navigateToWhatsapp() {    
+    window.open('https://www.linkedin.com/in/gasparsantillan/', '_blank');
+  }
+
+  navigateToGitHub() {    
+    window.open('https://github.com/gazz9ar', '_blank');
   }
 
 }

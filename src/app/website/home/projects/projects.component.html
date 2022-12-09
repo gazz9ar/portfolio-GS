@@ -6,10 +6,10 @@
             </div>
         </div>
         <div class="row mt-4 d-flex justify-content-center">
-            <div class="col-3" *ngFor="let project of projects$ | async as projects">
+            <div class="col-10 col-lg-6 project-col" *ngFor="let project of projects$ | async as projects">
                 <mat-card class="project-wrapper mat-app-background W-100">
                     <mat-card-content class="project" (click)="navigateTo(project.websiteUrl)">
-                        <img [src]="project.imgUrl" [alt]="project.name" class="w-100">
+                        <img [src]="project.imgUrl" [alt]="project.name" class="w-100 project-img">
                         <div class="position-absolute apptype" [ngClass]="{'bg-white': (darkmode | async),'text-dark':(darkmode | async)}">{{project.type}}</div>
                         <p class="appname">{{project.name}}</p>
                         <p>

@@ -1,27 +1,28 @@
 .banner {
     overflow: hidden;
 }
-.triangle {
-    width: 650px;
-    height: 650px;
-    border-top: 180px solid rgba(226, 226, 226, 0.03039215686);
-    border-right: 180px solid rgba(226, 226, 226, 0.03039215686);
-    transform: rotate(45deg);
-    position: absolute;
-    left: 25%;
-    top: 19%;
-    z-index: 2;
-}
+.triangle,
 .sub-triangle {
     width: 650px;
     height: 650px;
-    border-top: 13px solid rgba(226, 226, 226, 0.03039215686);
-    border-right: 13px solid rgba(226, 226, 226, 0.03039215686);
     transform: rotate(45deg);
     position: absolute;
-    left: 28%;
-    top: 19%;
     z-index: 2;
+    @media (max-width:1130px) {
+        display: none;
+    }
+}
+.triangle {   
+    border-top: 180px solid rgba(226, 226, 226, 0.03039215686);
+    border-right: 180px solid rgba(226, 226, 226, 0.03039215686);   
+    left: 25%;
+    top: 19%;
+}
+.sub-triangle {  
+    border-top: 13px solid rgba(226, 226, 226, 0.03039215686);
+    border-right: 13px solid rgba(226, 226, 226, 0.03039215686);   
+    left: 28%;
+    top: 19%;    
 }
 .avatar {   
     padding-top: 14%;
@@ -30,12 +31,19 @@
         width: 250px;
         z-index: 2;
         border-radius: 50%;
+        @media (max-width:600px) {
+            width: 200px;
+        }
     }
     .avatar-wrapper {
         z-index: 2;
         h1 {
             font-weight: 600;
               letter-spacing: 2px;
+        }
+        @media (max-width:1050px) {
+            width: 92%;
+            padding-top: 63px;
         }
     }
 }
@@ -58,10 +66,15 @@
         width: 97%;
         height: 97%;
         padding: 5px;
-        box-shadow: 2px 0px 38px #cd44e5;
-        
+        box-shadow: 2px 0px 38px #cd44e5;        
     }
-   
+    @media (max-width: 1005px) {
+        width: 207px;
+        height: 269px;  
+    }
+    @media (max-width: 850px) {
+        display: none;
+    }
 }
 .empty-box-right {    
     z-index: 5;
@@ -72,11 +85,19 @@
         /* padding: 10px; */
         padding-left: 20px;
         padding-top: 150px;
+        @media (max-width: 1005px) {
+            padding-top: 88px;  
+            font-size: 1.5rem;
+        }       
     }
     strong {
         padding-left: 20px;
         font-size: 1.6rem;
         margin-top: 15px;
+        @media (max-width: 1005px) {
+            font-size: 1.2rem;
+        }    
+      
     }
 }
 .social-media {
@@ -114,4 +135,14 @@
 .floating-icon {
     z-index: 2;
     width: 44px;
+    @media (max-width:1230px) {
+        display: none;
+    }
+}
+.description {
+    @media (max-width:450px) {
+        font-size: 1rem !important;
+        padding: 0px 25px;
+
+    }
 }
